@@ -9,13 +9,17 @@
     {
       "name": "Simon Bartlett",
       "email": "simon@sdelements.com"
+    },
+    {
+      "name": "Cory Harter",
+      "email": "coryh@cheezburger.com"
     }
   ],
   "keywords": "github hubot lets-chat",
-  "description": "The Official Let's Chat Adapter for Hubot",
+  "description": "Cheez-Forked Let's Chat Adapter for Hubot",
   "repository": {
     "type": "git",
-    "url": "http://github.com/sdelements/hubot-lets-chat.git"
+    "url": "http://github.com/cheezburger/hubot-lets-chat.git"
   },
   "dependencies": {
     "socket.io-client": "1.3.2",
