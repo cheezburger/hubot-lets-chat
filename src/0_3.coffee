@@ -8,7 +8,7 @@ LCB_HOSTNAME = process.env.HUBOT_LCB_HOSTNAME || 'localhost'
 LCB_PORT = process.env.HUBOT_LCB_PORT || 5000
 LCB_TOKEN = process.env.HUBOT_LCB_TOKEN
 LCB_ROOMS = process.env.HUBOT_LCB_ROOMS.split(',')
-LCB_CONNECT_TO_ALL_ROOMS = process.env.LCB_CONNECT_TO_ALL_ROOMS || false
+LCB_CONNECT_TO_ALL_ROOMS = process.env.HUBOT_LCB_CONNECT_TO_ALL_ROOMS
 HTTP_PROXY = process.env.http_proxy || process.env.HTTP_PROXY
 
 io = require('socket.io-client')
@@ -61,7 +61,7 @@ class LCB extends Adapter
           @emit 'connected'
           @connected = true
 
-        if LCB_CONNECT_TO_ALL_ROOMS
+        if LCB_CONNECT_TO_ALL_ROOMS?
           http = require('http')
           reqOptions = 
             hostname: LCB_HOSTNAME
@@ -82,7 +82,6 @@ class LCB extends Adapter
                     console.log 'Joined ' + room.name
         else
           for id in LCB_ROOMS
-            console.log id
             @socket.emit 'rooms:join', id, (room) =>
               console.log 'Joined ' + room.name
 

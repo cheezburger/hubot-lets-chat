@@ -1,22 +1,20 @@
 {
-  "name": "hubot-lets-chat",
-  "version": "0.0.7",
+  "name": "hubot-lets-cheezchat",
+  "version": "0.0.3",
   "author": {
-    "name": "Houssam Haidar",
-    "email": "houssam@sdelements.com"
-  },
-  "contributors": [
-    {
-      "name": "Simon Bartlett",
-      "email": "simon@sdelements.com"
+      "name": "Houssam Haidar",
+      "email": "houssam@sdelements.com"
     },
-    {
-      "name": "Cory Harter",
-      "email": "coryh@cheezburger.com"
-    }
-  ],
-  "keywords": "github hubot lets-chat",
-  "description": "Cheez-Forked Let's Chat Adapter for Hubot",
+    "contributors": [
+      {
+        "name": "Simon Bartlett",
+        "email": "simon@sdelements.com"
+      },
+      {
+        "name": "Cory Harter",
+        "email": "coryh@cheezburger.com"
+      }
+    ],
   "repository": {
     "type": "git",
     "url": "http://github.com/cheezburger/hubot-lets-chat.git"
