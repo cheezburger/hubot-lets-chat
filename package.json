@@ -1,6 +1,6 @@
 {
   "name": "hubot-lets-cheezchat",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": {
       "name": "Houssam Haidar",
       "email": "houssam@sdelements.com"
@@ -13,6 +13,10 @@
       {
         "name": "Cory Harter",
         "email": "coryh@cheezburger.com"
+      },
+      {
+        "name": "Andrew W. Buchanan",
+        "email": "buchanan@difference.com"
       }
     ],
   "repository": {

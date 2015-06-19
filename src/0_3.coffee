@@ -7,8 +7,10 @@ LCB_PROTOCOL = process.env.HUBOT_LCB_PROTOCOL || 'http'
 LCB_HOSTNAME = process.env.HUBOT_LCB_HOSTNAME || 'localhost'
 LCB_PORT = process.env.HUBOT_LCB_PORT || 5000
 LCB_TOKEN = process.env.HUBOT_LCB_TOKEN
-LCB_ROOMS = process.env.HUBOT_LCB_ROOMS.split(',')
 LCB_CONNECT_TO_ALL_ROOMS = process.env.HUBOT_LCB_CONNECT_TO_ALL_ROOMS
+if !LCB_CONNECT_TO_ALL_ROOMS
+  LCB_ROOMS = process.env.HUBOT_LCB_ROOMS.split(',')  
+
 HTTP_PROXY = process.env.http_proxy || process.env.HTTP_PROXY
 
 io = require('socket.io-client')
@@ -98,7 +100,7 @@ class LCB extends Adapter
           console.log 'Hubot joined ' + room.name
 
     @socket.on 'users:join', (user) =>
-      if user.room not in LCB_ROOMS or user.username is @robot.name
+      if (!LCB_CONNECT_TO_ALL_ROOMS and user.room not in LCB_ROOMS) or user.username is @robot.name
         return
 
       user = @robot.brain.userForId user.id,
